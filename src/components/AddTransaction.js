@@ -1,13 +1,23 @@
-import React, {useRef} from 'react'
+import React, {useRef, useContext} from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 const AddTransaction = () => {
     const textRef = useRef(null); 
     const amountRef = useRef(0); 
+    const ctx = useContext(GlobalContext);
 
     const submitHandler = e => {
         e.preventDefault();
 
+        const transaction = {
+            id: Math.floor(Math.random() * 10000000),
+            text: textRef.current.value,
+            amount: +amountRef.current.value
+        }
+
+        ctx.addTransaction(transaction);
     }
+
 
     return (
         <>
