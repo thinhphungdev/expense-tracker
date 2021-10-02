@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header.js';
 import Balance from './components/Balance.js';
 import IncomeExpense from './components/IncomeExpense.js';
-import Transaction from './components/Transaction';
+import TransactionList from './components/TransactionList';
 
 import AddTransaction from './components/AddTransaction';
 
@@ -12,15 +12,15 @@ import { GlobalProvider } from './context/GlobalState';
 
 function App() {
     return (
-        <React.Fragment>
+        <GlobalProvider>
             <Header />
             <div className="container">
                 <Balance />
                 <IncomeExpense />
-                <Transaction />
+                <TransactionList />
             </div>
             <AddTransaction />
-        </React.Fragment>
+        </GlobalProvider>
     )
 }
 
