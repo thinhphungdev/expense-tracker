@@ -12,4 +12,4 @@ const TransactionItem = props => {
     )
 }
 
-export default TransactionItem
+export default TransactionItem;

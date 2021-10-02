@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 const AddTransaction = () => {
     const textRef = useRef(null); 
-    const amountRef = useRef(0); 
+    const amountRef = useRef(null); 
     const ctx = useContext(GlobalContext);
 
     const submitHandler = e => {
@@ -16,6 +16,8 @@ const AddTransaction = () => {
         }
 
         ctx.addTransaction(transaction);
+        textRef.current.value = null;
+        amountRef.current.value = null;
     }
 
 
