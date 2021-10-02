@@ -8,6 +8,8 @@ import Transaction from './components/Transaction';
 
 import AddTransaction from './components/AddTransaction';
 
+import { GlobalProvider } from './context/GlobalState';
+
 function App() {
     return (
         <React.Fragment>
